@@ -705,20 +705,21 @@ func (dc *deductionCoordinator) deduceKnownPaths(path string) (pathDeduction, er
 
 func (dc *deductionCoordinator) deduceMirrorPaths(path string, uri *url.URL) (pd pathDeduction, ok bool) {
 	schemes := []string{"https", "http"}
-	mirrors := map[string]string {
+	mirrors := map[string]string{
 		// golang.org/x
-		"golang.org/x/blog": "github.com/golang/blog",
+		"golang.org/x/blog":   "github.com/golang/blog",
 		"golang.org/x/crypto": "github.com/golang/crypto",
-		"golang.org/x/exp": "github.com/golang/exp",
-		"golang.org/x/image": "github.com/golang/image",
+		"golang.org/x/exp":    "github.com/golang/exp",
+		"golang.org/x/image":  "github.com/golang/image",
 		"golang.org/x/mobile": "github.com/golang/mobile",
-		"golang.org/x/net": "github.com/golang/net",
-		"golang.org/x/sys": "github.com/golang/sys",
-		"golang.org/x/talks": "github.com/golang/talks",
-		"golang.org/x/text": "github.com/golang/text",
-		"golang.org/x/tools": "github.com/golang/tools",
+		"golang.org/x/net":    "github.com/golang/net",
+		"golang.org/x/sys":    "github.com/golang/sys",
+		"golang.org/x/talks":  "github.com/golang/talks",
+		"golang.org/x/text":   "github.com/golang/text",
+		"golang.org/x/tools":  "github.com/golang/tools",
+		"go.uber.org/zap":     "github.com/uber-go/zap",
 		// google.golang.org
-		"google.golang.org/grpc": "github.com/grpc/grpc-go",
+		"google.golang.org/grpc":     "github.com/grpc/grpc-go",
 		"google.golang.org/genproto": "github.com/google/go-genproto",
 	}
 
